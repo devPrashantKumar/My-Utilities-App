@@ -1,3 +1,13 @@
 spring:
   application:
     name: myUtilitiesGraphQL
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+
+server:
+  servlet:
+    context-path: /gql-api
