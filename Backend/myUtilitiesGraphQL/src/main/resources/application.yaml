@@ -14,7 +14,7 @@ spring:
 
 server:
   servlet:
-    context-path: /gql-api
+    context-path: /utilities-api
 
 #voyager:
 #  enabled: true
