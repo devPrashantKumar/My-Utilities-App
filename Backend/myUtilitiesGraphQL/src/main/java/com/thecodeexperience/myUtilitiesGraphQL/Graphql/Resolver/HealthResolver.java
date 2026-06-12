@@ -17,13 +17,11 @@ public class HealthResolver {
 
     @QueryMapping
     public HealthDTO getById(@Argument Long id) {
-        // Replace with your database lookup logic
         return healthService.getById(id);
     }
 
     @QueryMapping
     public List<HealthDTO> getAll() {
-        // Replace with your database lookup logic
         return healthService.getAll();
     }
 }
