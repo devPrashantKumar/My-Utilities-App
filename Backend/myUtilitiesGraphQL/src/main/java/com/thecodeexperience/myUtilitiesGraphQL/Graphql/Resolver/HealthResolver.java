@@ -1,7 +1,7 @@
-package com.thecodeexperience.myUtilitiesGraphQL.Controller;
+package com.thecodeexperience.myUtilitiesGraphQL.Graphql.Resolver;
 
 import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;
-import com.thecodeexperience.myUtilitiesGraphQL.service.HealthService;
+import com.thecodeexperience.myUtilitiesGraphQL.Service.HealthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class HealthGraphqlController {
+public class HealthResolver {
 
     private final HealthService healthService;
 

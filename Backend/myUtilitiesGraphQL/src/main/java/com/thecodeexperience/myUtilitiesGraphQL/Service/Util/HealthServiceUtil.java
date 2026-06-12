@@ -1,4 +1,4 @@
-package com.thecodeexperience.myUtilitiesGraphQL.service.util;
+package com.thecodeexperience.myUtilitiesGraphQL.Service.Util;
 
 import com.thecodeexperience.myUtilitiesGraphQL.CO.HealthCO;
 import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;

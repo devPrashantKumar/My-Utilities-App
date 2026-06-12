@@ -1,10 +1,11 @@
-package com.thecodeexperience.myUtilitiesGraphQL.service;
+package com.thecodeexperience.myUtilitiesGraphQL.Service;
 
 import com.thecodeexperience.myUtilitiesGraphQL.CO.HealthCO;
 import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;
 import com.thecodeexperience.myUtilitiesGraphQL.Entity.Health;
+import com.thecodeexperience.myUtilitiesGraphQL.Exception.GenericStatusException;
 import com.thecodeexperience.myUtilitiesGraphQL.Repository.HealthRepository;
-import com.thecodeexperience.myUtilitiesGraphQL.service.util.HealthServiceUtil;
+import com.thecodeexperience.myUtilitiesGraphQL.Service.Util.HealthServiceUtil;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
@@ -23,11 +24,12 @@ public class HealthService {
 
     public List<HealthDTO> getAll(){
         List<Health> healthList = healthRepository.findAll();
-        return healthList.stream().map(HealthServiceUtil::getHealthDTO).toList();
+        throw new GenericStatusException("item doesn't exists",400);
+        //return healthList.stream().map(HealthServiceUtil::getHealthDTO).toList();
     }
 
     public HealthDTO getById(Long id){
-        Health health = healthRepository.findById(id).orElseThrow(()->new RuntimeException("item doesn't exists"));
+        Health health = healthRepository.findById(id).orElseThrow(()->new GenericStatusException("item doesn't exists",400));
         return HealthServiceUtil.getHealthDTO(health);
     }
 }

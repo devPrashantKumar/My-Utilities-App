@@ -1,8 +1,8 @@
-package com.thecodeexperience.myUtilitiesGraphQL.Controller;
+package com.thecodeexperience.myUtilitiesGraphQL.Rest.Controller;
 
 import com.thecodeexperience.myUtilitiesGraphQL.CO.HealthCO;
 import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;
-import com.thecodeexperience.myUtilitiesGraphQL.service.HealthService;
+import com.thecodeexperience.myUtilitiesGraphQL.Service.HealthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
