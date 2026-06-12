@@ -19,4 +19,9 @@ public class HealthService {
         List<Health> healthList = healthRepository.findAll();
         return healthList.stream().map(HealthServiceUtil::getHealthDTO).toList();
     }
+
+    public HealthDTO getById(Long id){
+        Health health = healthRepository.findById(id).orElseThrow(()->new RuntimeException("item doesn't exists"));
+        return HealthServiceUtil.getHealthDTO(health);
+    }
 }

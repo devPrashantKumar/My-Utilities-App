@@ -1,0 +1,14 @@
+type Query {
+    getById(id: ID!): HealthDto
+}
+
+type HealthDto {
+    id: ID!
+    steps: Int
+    water: Int
+    calories: Int
+    sleep: Int
+    workout: String
+    dailyDiary: String
+    expenses: Int
+}

@@ -4,6 +4,7 @@ import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;
 import com.thecodeexperience.myUtilitiesGraphQL.service.HealthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class HealthController {
     @GetMapping
     public List<HealthDTO> getAll(){
         return healthService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public HealthDTO getById(@PathVariable("id") Long id){
+        return healthService.getById(id);
     }
 }

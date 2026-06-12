@@ -1,7 +1,9 @@
 spring:
   application:
     name: myUtilitiesGraphQL
-
+  graphql:
+    graphiql:
+      enabled: true
 
   h2:
     console:
@@ -13,3 +15,13 @@ spring:
 server:
   servlet:
     context-path: /gql-api
+
+#voyager:
+#  enabled: true
+#  endpoint: /graphql
+
+logging:
+  level:
+    org:
+      springframework:
+        graphql : DEBUG
