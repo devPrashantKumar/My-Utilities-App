@@ -24,8 +24,7 @@ public class HealthService {
 
     public List<HealthDTO> getAll(){
         List<Health> healthList = healthRepository.findAll();
-        throw new GenericStatusException("item doesn't exists",400);
-        //return healthList.stream().map(HealthServiceUtil::getHealthDTO).toList();
+        return healthList.stream().map(HealthServiceUtil::getHealthDTO).toList();
     }
 
     public HealthDTO getById(Long id){
