@@ -1,5 +1,6 @@
 type Query {
     getById(id: ID!): HealthDto
+    getAll: [HealthDto]
 }
 
 type HealthDto {

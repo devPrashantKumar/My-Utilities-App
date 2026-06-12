@@ -7,6 +7,8 @@ import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class HealthGraphqlController {
@@ -17,6 +19,12 @@ public class HealthGraphqlController {
     public HealthDTO getById(@Argument Long id) {
         // Replace with your database lookup logic
         return healthService.getById(id);
+    }
+
+    @QueryMapping
+    public List<HealthDTO> getAll() {
+        // Replace with your database lookup logic
+        return healthService.getAll();
     }
 }
 

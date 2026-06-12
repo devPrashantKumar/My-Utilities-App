@@ -1,5 +1,6 @@
 package com.thecodeexperience.myUtilitiesGraphQL.service;
 
+import com.thecodeexperience.myUtilitiesGraphQL.CO.HealthCO;
 import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;
 import com.thecodeexperience.myUtilitiesGraphQL.Entity.Health;
 import com.thecodeexperience.myUtilitiesGraphQL.Repository.HealthRepository;
@@ -14,6 +15,11 @@ import java.util.List;
 public class HealthService {
 
     private final HealthRepository healthRepository;
+
+    public HealthDTO save(HealthCO heathCo){
+        Health health = healthRepository.save(HealthServiceUtil.getHealthEntity(heathCo));
+        return HealthServiceUtil.getHealthDTO(health);
+    }
 
     public List<HealthDTO> getAll(){
         List<Health> healthList = healthRepository.findAll();

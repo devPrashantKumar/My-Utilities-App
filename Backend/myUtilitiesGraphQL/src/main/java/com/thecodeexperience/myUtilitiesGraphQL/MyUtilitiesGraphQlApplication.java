@@ -8,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.List;
+
 @SpringBootApplication
 @RequiredArgsConstructor
 public class MyUtilitiesGraphQlApplication implements CommandLineRunner {
@@ -28,7 +30,18 @@ public class MyUtilitiesGraphQlApplication implements CommandLineRunner {
 		healthEntry01.setDailyDiary("GOOD");
 		healthEntry01.setExpenses(400L);
 		healthEntry01.setWorkout(Workout.STRENGTH);
-		healthRepository.save(healthEntry01);
+
+		Health healthEntry2 = new Health();
+		healthEntry2.setSteps(1000L);
+		healthEntry2.setWater(7L);
+		healthEntry2.setSleep(5L);
+		healthEntry2.setCalories(1000L);
+		healthEntry2.setDailyDiary("VERY GOOD");
+		healthEntry2.setExpenses(100L);
+		healthEntry2.setWorkout(null);
+		List<Health> healthList = List.of(healthEntry01,healthEntry2);
+
+		healthRepository.saveAll(healthList);
 
 		System.out.println("Running CommandLineRunner");
 	}

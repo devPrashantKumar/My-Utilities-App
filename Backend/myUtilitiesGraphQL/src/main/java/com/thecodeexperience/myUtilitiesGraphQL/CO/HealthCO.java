@@ -1,22 +1,12 @@
-package com.thecodeexperience.myUtilitiesGraphQL.Entity;
+package com.thecodeexperience.myUtilitiesGraphQL.CO;
 
 import com.thecodeexperience.myUtilitiesGraphQL.Enum.Workout;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class Health {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class HealthCO {
     private Long steps;
     private Long water;
     private Long calories;

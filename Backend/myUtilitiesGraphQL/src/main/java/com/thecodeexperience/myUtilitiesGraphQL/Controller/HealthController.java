@@ -1,12 +1,12 @@
 package com.thecodeexperience.myUtilitiesGraphQL.Controller;
 
+import com.thecodeexperience.myUtilitiesGraphQL.CO.HealthCO;
 import com.thecodeexperience.myUtilitiesGraphQL.Dtos.HealthDTO;
 import com.thecodeexperience.myUtilitiesGraphQL.service.HealthService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,13 +17,19 @@ public class HealthController {
 
     private final HealthService healthService;
 
+    @PostMapping
+    public ResponseEntity<HealthDTO> save(HealthCO healthCo){
+        HealthDTO healthDTO = healthService.save(healthCo);
+        return ResponseEntity.status(HttpStatus.CREATED).body(healthDTO);
+    }
+
     @GetMapping
-    public List<HealthDTO> getAll(){
-        return healthService.getAll();
+    public ResponseEntity<List<HealthDTO>> getAll(){
+        return ResponseEntity.ok(healthService.getAll());
     }
 
     @GetMapping("/{id}")
-    public HealthDTO getById(@PathVariable("id") Long id){
-        return healthService.getById(id);
+    public ResponseEntity<HealthDTO> getById(@PathVariable("id") Long id){
+        return ResponseEntity.ok(healthService.getById(id));
     }
 }
