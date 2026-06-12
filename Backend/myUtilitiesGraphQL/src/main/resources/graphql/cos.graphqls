@@ -1,0 +1,9 @@
+input HealthCO {
+    steps: Int!
+    water: Int!
+    calories: Int!
+    sleep: Int!
+    workout: String
+    dailyDiary: String
+    expenses: Int!
+}
