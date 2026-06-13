@@ -17,11 +17,11 @@ public class Health {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Steps steps;
-    private Hydration hydration;
+    private Long steps;
+    private Long water;
     private Long calories;
-    private Sleep sleep;
+    private Long sleep;
     private Workout workout;
-    private Diary dailyDiary;
-    private Expenses expenses;
+    private String dailyDiary;
+    private Long expenses;
 }
