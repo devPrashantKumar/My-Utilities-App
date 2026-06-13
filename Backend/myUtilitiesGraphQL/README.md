@@ -32,6 +32,9 @@ spring.datasource.password=
 #### run application
 - java -jar my-directory/myUtilitiesGraphQL-0.0.1-SNAPSHOT.jar
 
+### run application in detached mode
+- nohup java -jar my-directory/myUtilitiesGraphQL-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
+
 #### test curl inside ec2
 - curl --location 'http://localhost:8080/utilities-api/health'
 
